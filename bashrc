@@ -78,7 +78,7 @@ fi
 ## For displaying proper title in screen ##
 XTERM_TITLE="${USER}@${HOSTNAME}: ${PWD}"
 PROMPT_COMMAND='echo -ne "\033]0;$XTERM_TITLE\007"'
-export GOPATH=~/Dropbox/barum/projects/apps/gocode
+export GOPATH=
 export GOBIN=$GOPATH/bin
 
 export PATH=$PATH:/usr/local/go/bin:.:$GOBIN:~/apps/bin:
