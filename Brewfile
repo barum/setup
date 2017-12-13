@@ -1,0 +1,15 @@
+tap 'caskroom/cask'
+
+brew 'git'
+brew 'npm'
+
+cask 'brackets'
+cask 'flux'
+cask 'firefox'
+cask 'gimp'
+cask 'google-chrome'
+cask 'mamp'
+cask 'opera'
+cask 'spectacle'
+cask 'sequel-pro'
+cask 'vlc'
