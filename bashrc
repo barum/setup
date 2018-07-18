@@ -32,17 +32,17 @@ fi
 source ~/.git-prompt.sh
 if [ `whoami` != 'root' ] ; then
     echo 'NOT ROOT'
-PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\[\033[01;36m\]\h\[\033[00m\]:\[\033[01;33m\]\w\[\033[01;35m\]$(__git_ps1)\[\033[00m\] 
+PS1='--${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[01;31m\]@\[\033[01;36m\]\h\[\033[00m\]:\[\033[01;33m\]\w\[\033[01;35m\]$(__git_ps1)\[\033[00m\] 
  \[\033[0;36m\]==> \[\033[00m\] '
 else 
     echo ' ROOT'
-PS1='${debian_chroot:+($debian_chroot)}\[\033[1;5;31m\]\u@\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;33m\]\w\[\033[01;35m\]$(__git_ps1)\[\033[00m\] 
+PS1='${debian_chroot:+($debian_chroot)}\[\033[1;5;31m\]\u\[\033[01;32m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;33m\]\w\[\033[01;35m\]$(__git_ps1)\[\033[00m\] 
  \[\033[0;36m\]==> \[\033[00m\] '
 fi
 
 ## LS Color in Mac OS X
-#export CLICOLOR=1
-#export LSCOLORS=ExFxBxDxCxegedabagacad
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
 
 
 
@@ -61,12 +61,14 @@ alias less='less -R'  # Color
 alias crontab='VIM_CRONTAB=true crontab'
 alias updatedb='sudo /usr/libexec/locate.updatedb'
 alias gdir='cd $GOPATH '
-alias ls='ls --color'
-alias ll='ls -lag --color'
+alias ls='ls'
+alias ll='ls -alg'
 alias chrome='google-chrome&'
 
 # Don't remember ssh key passwords
 unset SSH_AUTH_SOCK
+
+export JAVA_HOME="`/usr/libexec/java_home`"
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -78,7 +80,7 @@ fi
 ## For displaying proper title in screen ##
 XTERM_TITLE="${USER}@${HOSTNAME}: ${PWD}"
 PROMPT_COMMAND='echo -ne "\033]0;$XTERM_TITLE\007"'
-export GOPATH=~/Dropbox/barum/projects/apps/gocode
+export GOPATH=~/Projects/nm/gocode
 export GOBIN=$GOPATH/bin
 
 export PATH=$PATH:/usr/local/go/bin:.:$GOBIN:~/apps/bin:
